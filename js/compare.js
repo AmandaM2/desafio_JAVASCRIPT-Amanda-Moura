@@ -35,7 +35,7 @@ function SetCarToCompare(el, carClass) {
         if(el.checked){
             if(carArr.length >=2) {
                 el.checked = false;
-                alert("Você só pode comprar 2 veículos por vez!")
+                alert("Você só pode comparar 2 veículos por vez!")
                 return;
             }
 
@@ -57,7 +57,7 @@ function SetCarToCompare(el, carClass) {
 }
 
 function botaoComparar(){
-    const compareBtn = document.querySelector("button[onclick='showCompare()']");
+    const compareBtn = document.querySelector("button[onclick='ShowCompare()']");
 
     if(carArr.length === 2){
         compareBtn.disabled = false;
@@ -98,7 +98,7 @@ function UpdateCompareTable() {
         document.getElementById(`compare_alturacacamba_${i}`).textContent = car.alturaCacamba;
         document.getElementById(`compare_alturaveiculo_${i}`).textContent = car.alturaVeiculo;
         document.getElementById(`compare_alturasolo_${i}`).textContent = car.alturaSolo;
-        document.getElementById(`compare_capacidadedecarga_${i}`).textContent = car.capacidadeCarga;
+        document.getElementById(`compare_capacidadecarga_${i}`).textContent = car.capacidadeCarga;
         document.getElementById(`compare_motor_${i}`).textContent = car.motor;
         document.getElementById(`compare_potencia_${i}`).textContent = car.potencia;
         document.getElementById(`compare_volumecacamba_${i}`).textContent = car.volumeCacamba;
