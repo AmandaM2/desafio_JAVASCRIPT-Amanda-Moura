@@ -35,7 +35,7 @@ function SetCarToCompare(el, carClass) {
         if(el.checked){
             if(carArr.length >=2) {
                 el.checked = false;
-                alert("Você só poode comprar 2 veículos por vez!")
+                alert("Você só pode comprar 2 veículos por vez!")
                 return;
             }
 
@@ -57,7 +57,7 @@ function SetCarToCompare(el, carClass) {
 }
 
 function botaoComparar(){
-    const compareBtn = document.querySelector("button[onclick=1'showCompare()']");
+    const compareBtn = document.querySelector("button[onclick='showCompare()']");
 
     if(carArr.length === 2){
         compareBtn.disabled = false;
@@ -80,10 +80,12 @@ function ShowCompare() {
 
     UpdateCompareTable();
     document.getElementById("compare").style.display = "block";
+    document.body.classList.add("compare-open")
 }
 
 function HideCompare(){
     document.getElementById("compare").style.display = "none"; 
+    document.body.classList.remove("compare-open");
 }
 
 function UpdateCompareTable() {
@@ -92,7 +94,7 @@ function UpdateCompareTable() {
 
         document.getElementById(`compare_image_${i}`).innerHTML =`<img src="${car.image}" width-"100">`;
 
-        document.getElementById(`compare_modelo_${i}`).textContent - car.nome;
+        document.getElementById(`compare_modelo_${i}`).textContent = car.nome;
         document.getElementById(`compare_alturacacamba_${i}`).textContent = car.alturaCacamba;
         document.getElementById(`compare_alturaveiculo_${i}`).textContent = car.alturaVeiculo;
         document.getElementById(`compare_alturasolo_${i}`).textContent = car.alturaSolo;
